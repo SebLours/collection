@@ -38,7 +38,7 @@ final class Pack extends AbstractOperation
             static fn ($value, $key): array => [$key, $value];
 
         /** @var Closure(Iterator<TKey, T>): Generator<int, array{0: TKey, 1: T}> $pipe */
-        $pipe = Pipe::of()(
+        $pipe = Pipe::ofTyped2(
             Map::of()($mapCallback),
             (new Normalize())()
         );
